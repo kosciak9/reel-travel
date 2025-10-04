@@ -12,7 +12,7 @@ export default function NotFoundScreen() {
             This screen doesn&apos;t exist.
           </fbt>
         </Text>
-        <Link className="mt-4 pt-4" href="/">
+        <Link className="mt-4 pt-4" href="/save">
           <Text className="text-base text-[#2e78b7]">
             <fbt desc="Go back link">Go to home screen!</fbt>
           </Text>

@@ -1,7 +1,7 @@
 import _AntDesign from '@expo/vector-icons/AntDesign.js';
 import { type IconProps } from '@expo/vector-icons/build/createIconSet.js';
 import { Tabs } from 'expo-router';
-import { fbs, useLocaleContext } from 'fbtee';
+import { useLocaleContext } from 'fbtee';
 import { FC, useTransition } from 'react';
 import { Pressable, View } from 'react-native';
 import colors from 'src/ui/colors.ts';
@@ -24,7 +24,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="save"
         options={{
           headerRight: () => (
             <Pressable
@@ -49,24 +49,24 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }: { focused: boolean }) => (
             <AntDesign
               color={focused ? colors.accent : colors.text}
-              name="ie"
+              name="plus-circle"
               size={24}
             />
           ),
-          title: String(fbs('Home', 'Home tab title')),
+          title: 'Zapisz',
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="places"
         options={{
           tabBarIcon: ({ focused }: { focused: boolean }) => (
             <AntDesign
               color={focused ? colors.accent : colors.text}
-              name="printer"
+              name="book"
               size={24}
             />
           ),
-          title: String(fbs('Two', 'Two tab title')),
+          title: 'Zapisane',
         }}
       />
     </Tabs>

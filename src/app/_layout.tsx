@@ -4,7 +4,6 @@ import { getLocales } from 'expo-localization';
 import { Slot } from 'expo-router';
 import { createLocaleContext } from 'fbtee';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { ViewerContext } from 'src/user/useViewerContext.tsx';
 import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
 
 export const unstable_settings = {
@@ -28,13 +27,11 @@ const LocaleContext = createLocaleContext({
 export default function RootLayout() {
   return (
     <LocaleContext>
-      <ViewerContext>
-        <GestureHandlerRootView>
-          <VStack className="!basis-full" flex1>
-            <Slot />
-          </VStack>
-        </GestureHandlerRootView>
-      </ViewerContext>
+      <GestureHandlerRootView>
+        <VStack className="!basis-full" flex1>
+          <Slot />
+        </VStack>
+      </GestureHandlerRootView>
     </LocaleContext>
   );
 }
